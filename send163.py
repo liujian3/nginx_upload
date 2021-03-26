@@ -21,7 +21,7 @@ def sendfile(f):
     print(f+'ok')
     os.remove('./'+f)
 os.chdir('nginx_upload')
-os.system('split -b 50m -d '+sys.argv[1]+' _'+sys.argv[1])
+os.system('split -b 50m '+sys.argv[1]+' _'+sys.argv[1])
 for f in os.listdir('.'):
     if f.startswith('_'+sys.argv[1]):
         sendfile(f)
