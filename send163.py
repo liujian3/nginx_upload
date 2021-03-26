@@ -19,9 +19,10 @@ def sendfile(f,path='upload'):
     server.login('safeei@126.com', 'GKCFSQMQYBSMRRRE')
     server.sendmail('safeei@126.com', ['safeei@126.com'],message.as_string())
     print(f+'ok')
-os.system('split -b 50m '+sys.argv[1]+' safeei')
+os.system('split -b 50m '+sys.argv[1]+' _safeei')
 path='upload'
 if len(sys.argv)>2:
     path=sys.argv[2]
 for f in os.listdir('/'+path+'/'):
-    sendfile(f,path)
+    if f.startswith('_safeei'):
+        sendfile(f,path)
