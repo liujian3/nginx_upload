@@ -67,6 +67,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		libxslt-dev \
 		gd-dev \
 		geoip-dev \
+		python \
 	&& curl -fSL https://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz \
 	&& curl -fSL https://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc \
 	&& export GNUPGHOME="$(mktemp -d)" \
@@ -141,6 +142,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 RUN apk add --no-cache curl
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY send163.py /upload/send163.py
 COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY nginx_upload.default.conf /etc/nginx/conf.d/nginx_upload.default.conf
 
