@@ -141,7 +141,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 RUN apk add --no-cache curl python3
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY send163.py /tmp/nginx_upload/send163.py
+COPY send163.py /tmp/send163.py
 COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY nginx_upload.default.conf /etc/nginx/conf.d/nginx_upload.default.conf
 
