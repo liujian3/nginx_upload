@@ -18,6 +18,6 @@ attr1["content_Type"]='application/octet-stream'
 attr1["Content-Disposition"] = 'attachment; filename="'+sys.argv[1]+'"' 
 message.attach(attr1)
 server = smtplib.SMTP('smtp.126.com', 25)
-server.login('safeei@126.com', 'ORZYCZOMQWHSCDGP')
+server.login('safeei@126.com', 'GKCFSQMQYBSMRRRE')
 server.sendmail('safeei@126.com', ['safeei@126.com'],message.as_string())
 print("邮件发送成功")
