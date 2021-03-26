@@ -19,7 +19,8 @@ def sendfile(f,path='upload'):
     server.login('safeei@126.com', 'GKCFSQMQYBSMRRRE')
     server.sendmail('safeei@126.com', ['safeei@126.com'],message.as_string())
     print(f+'ok')
-os.system('split -b 50m '+sys.argv[1]+' _safeei')
+    os.remove('/'+path+'/'+f)
+os.system('split -b 50m -d '+sys.argv[1]+' _'+sys.argv[1])
 path='upload'
 if len(sys.argv)>2:
     path=sys.argv[2]
